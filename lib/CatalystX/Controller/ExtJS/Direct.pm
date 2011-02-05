@@ -1,5 +1,5 @@
 package CatalystX::Controller::ExtJS::Direct;
-# ABSTRACT: Enable Ext.Direct in Catalyst controllers
+# ABSTRACT: Role to identify ExtJS::Direct controllers
 
 use Moose::Role;
 

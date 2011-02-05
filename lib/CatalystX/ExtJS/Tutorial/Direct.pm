@@ -12,12 +12,13 @@ Procedure Call fashion.
 This requires a router on the server side to route the requests to the
 matching method.
 
-L<CatalystX::Controller::ExtJS::Direct> will take care of creating the
+L<CatalystX::ExtJS::Direct> will take care of creating the
 API and provides a convenient way to include it in your web application
 as well as providing a router which takes care of calling the correct
 Catalyst actions when it comes to a request.
 
-Please find a working example of the tutorial at C</tutorial>.
+Please find a working example of the tutorial at C</tutorial> in the
+L<CatalystX::ExtJS> distribution.
 
 =head1 EXAMPLES
     

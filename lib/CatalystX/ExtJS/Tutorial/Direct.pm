@@ -237,7 +237,7 @@ play around with the DBIC API:
  
  UserDBIC.create({first: 'Marge', last: 'Simpson', email:'marge@simpsons.com'});
  
- UserDBIC.read(2, function(marge){console.log(marge)});
+ UserDBIC.item(2, function(marge){console.log(marge)});
  
  UserDBIC.delete(2); 
  

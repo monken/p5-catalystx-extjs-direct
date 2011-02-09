@@ -1,5 +1,4 @@
-package
-  MyApp::View::JSON;
+package MyApp::View::JSON;
 
 use strict;
 use base 'Catalyst::View::JSON';

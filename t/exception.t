@@ -35,4 +35,8 @@ ok(
     'get via json in body'
 );
 
-warn $mech->content;
+my $json = decode_json($mech->content);
+
+is($json->{status_code}, 200);
+
+done_testing;

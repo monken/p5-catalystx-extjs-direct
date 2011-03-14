@@ -141,7 +141,7 @@ sub router {
                 $c->visit($route->build_url( $req->{data} ));
                 my $response = $c->res;
                 if ( $response->content_type eq 'application/json' ) {
-                    (my $res_body = $response->body) =~ s/^\xEF\xBB\xBF//; # remove BOM
+                    (my $res_body = $response->body || '') =~ s/^\xEF\xBB\xBF//; # remove BOM
                     my $json = JSON::decode_json( $res_body );
                     $body = $json;
                 } else {
@@ -163,8 +163,8 @@ sub router {
                 } else {
                     $msg = join("\n", "$@", $c->response->body || ());
                 }
-                push(@res, { type => 'exception', tid => $req->{tid}, message => $msg, status => $c->res->status });
-                $c->log->dump($msg) if($c->debug && !ref $msg);
+                push(@res, { type => 'exception', tid => $req->{tid}, message => $msg, status_code => $c->res->status });
+                $c->log->error($msg) if($c->debug && !ref $msg);
                 next REQUESTS;
             };
             

@@ -15,7 +15,7 @@ $mech->add_header( 'Content-type' => 'application/json' );
 
 my $api = { url     => '/api/router',
             type    => 'remoting',
-            actions => { JSON       => [ { name => 'index', len => 0 }, ],
+            actions => { JSON       => [ { name => 'index', len => 0 },{ name => 'exception', len => 0 }, ],
                          Calculator => [ { name => 'add',      len => 2 },
                                          { name => 'upload',   len => 0 },
                                          { name => 'sum',      len => 1 },
@@ -35,7 +35,7 @@ is_deeply( $json, $api, 'expected api' );
 my $lens    = 0;
 my $content = $mech->content;
 $lens++ while ( $content =~ /"len":(\d+)/g );
-is( $lens, 6 );
+is( $lens, 7 );
 
 $mech->get_ok( '/api?namespace=MyApp', undef, 'get api via a request' );
 ok( $json = decode_json( $mech->content ), 'valid json' );

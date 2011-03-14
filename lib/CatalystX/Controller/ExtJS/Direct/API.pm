@@ -157,8 +157,9 @@ sub router {
                 my $msg;
                 if(@{ $c->error } && List::MoreUtils::all { ref $_ } @{ $c->error }) {
                     $msg = @{$c->error} == 1 ? $c->error->[0] : $c->error;
+                    $msg = "$msg";
                 } elsif(scalar @{ $c->error }) {
-                    $msg = join "\n", @{ $c->error };
+                    $msg = join "\n", map { "$_" } @{ $c->error };
                 } else {
                     $msg = join("\n", "$@", $c->response->body || ());
                 }

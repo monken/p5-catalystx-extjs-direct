@@ -11,5 +11,11 @@ sub index : PathPart('') Direct {
     $c->forward($c->view('JSON'));
 }
 
+sub exception : PathPart('') Direct {
+    my ($self, $c) = @_;
+    $c->res->content_type('application/json');
+    $c->error(bless({}, 'ABC'))
+}
+
 
 1;

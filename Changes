@@ -1,5 +1,9 @@
 Revision history for CatalystX-ExtJS-Direct
 
+2.1.3 - 2011-03-20
+  -  error handling:
+     stringify only blessed objects, pass through perl objects
+
 2.1.2 - 2011-03-14
   -  Fixed bug where objects in $c->error where not stringified
      and caused the JSON module to die

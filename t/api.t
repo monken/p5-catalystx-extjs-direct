@@ -15,11 +15,11 @@ $mech->add_header( 'Content-type' => 'application/json' );
 
 my $api = { url     => '/api/router',
             type    => 'remoting',
-            actions => { JSON       => [ { name => 'index', len => 0 },{ name => 'exception', len => 0 }, ],
+            actions => { JSON       => [ { name => 'exception', len => 0 }, { name => 'index', len => 0 }, ],
                          Calculator => [ { name => 'add',      len => 2 },
-                                         { name => 'upload',   len => 0 },
-                                         { name => 'sum',      len => 1 },
                                          { name => 'subtract', len => 0 },
+                                         { name => 'sum',      len => 1 },
+                                         { name => 'upload',   len => 0 },
                          ],
                          NestedController => [ { name => 'index', len => 0 }, ]
             } };

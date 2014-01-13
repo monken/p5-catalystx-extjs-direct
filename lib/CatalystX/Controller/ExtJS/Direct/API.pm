@@ -51,7 +51,7 @@ sub _build_api {
         next
           unless ( $controller->can('is_direct') || $meta->does_role('CatalystX::Controller::ExtJS::Direct') );
         my @methods;
-        foreach my $method ( $controller->get_action_methods() ) {
+        foreach my $method ( sort { $a->name cmp $b->name } $controller->get_action_methods ) {
             next
               unless ( my $action = $controller->action_for( $method->name ) );
             next unless ( exists $action->attributes->{Direct} );

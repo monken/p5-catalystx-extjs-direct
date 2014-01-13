@@ -1,5 +1,8 @@
 Revision history for CatalystX-ExtJS-Direct
 
+2.1.5 - 2014-01-13
+  - handle hash randomization
+
 2.1.4 - 2011-03-20
   -  error handling:
      stringify only blessed objects, pass through perl objects

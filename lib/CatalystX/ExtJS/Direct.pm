@@ -1,5 +1,8 @@
 package CatalystX::ExtJS::Direct;
 # ABSTRACT: Enable Ext.Direct in Catalyst controllers
+use strict;
+use warnings;
+
 
 1;
 
@@ -12,16 +15,16 @@ __END__
   extends 'CatalystX::Controller::ExtJS::Direct::API';
 
   package MyApp::Controller::Calculator;
-  
+
   use Moose;
   BEGIN { extends 'Catalyst::Controller' };
   with 'CatalystX::Controller::ExtJS::Direct';
-  
+
   sub sum : Local : Direct : DirectArgs(1) {
       my ($self, $c) = @_;
       $c->res->body( $c->req->param('a') + $c->req->param('b') );
   }
-  
+
   1;
 
 In your web application:
@@ -34,7 +37,7 @@ In your web application:
         alert(result);
     });
   </script>
-  
+
 
 =head1 DESCRIPTION
 

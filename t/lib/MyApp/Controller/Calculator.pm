@@ -1,4 +1,6 @@
 package MyApp::Controller::Calculator;
+use strict;
+use warnings;
 
 use Moose;
 
